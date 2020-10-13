@@ -1,3 +1,4 @@
+import { OrdersRepository } from '@modules/orders/infra/typeorm/repositories/OrdersRepository';
 import { getRepository, Repository } from 'typeorm';
 
 import IOrdersRepository from '@modules/orders/repositories/IOrdersRepository';
@@ -11,12 +12,31 @@ class OrdersRepository implements IOrdersRepository {
     this.ormRepository = getRepository(Order);
   }
 
+  // --------------------- Método Create
+
   public async create({ customer, products }: ICreateOrderDTO): Promise<Order> {
     // TODO
+
+    const order = this.ormRepository.create({
+      customer,
+      order_products: products,
+    });
+
+    await this.ormRepository.save(order);
+
+    return order;
   }
+
+// --------------------- Método findById
+  
 
   public async findById(id: string): Promise<Order | undefined> {
     // TODO
+    const order = this.ormRepository.findOne(id, {
+      relations: ['order_products', 'customer'],
+    });
+
+    return order;
   }
 }
 

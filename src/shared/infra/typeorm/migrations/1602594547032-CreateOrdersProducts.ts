@@ -12,7 +12,7 @@ export default class CreateOrdersProducts1602594547032 implements MigrationInter
                         type: 'uuid',
                         isPrimary: true,
                         generationStrategy: 'uuid',
-                        // default:'uuid_generate_v4()',
+                        default:'uuid_generate_v4()',
                     },
                     {
                         name: 'price',

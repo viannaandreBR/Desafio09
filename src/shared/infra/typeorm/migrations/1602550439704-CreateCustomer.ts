@@ -12,7 +12,7 @@ export default class CreateCustomer1602550439704 implements MigrationInterface {
                         type: 'uuid',
                         isPrimary: true,
                         generationStrategy: 'uuid',
-                        // default:'uuid_generate_v4()',
+                        default:'uuid_generate_v4()',
                     },
                     {
                         name: 'name',

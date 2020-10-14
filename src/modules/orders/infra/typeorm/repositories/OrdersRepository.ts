@@ -1,4 +1,4 @@
-import { OrdersRepository } from '@modules/orders/infra/typeorm/repositories/OrdersRepository';
+// import { OrdersRepository } from '@modules/orders/infra/typeorm/repositories/OrdersRepository';
 import { getRepository, Repository } from 'typeorm';
 
 import IOrdersRepository from '@modules/orders/repositories/IOrdersRepository';
